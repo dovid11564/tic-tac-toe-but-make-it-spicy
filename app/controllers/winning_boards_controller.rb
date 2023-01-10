@@ -1,0 +1,2 @@
+class WinningBoardsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class ComputerMovesController < ApplicationController
+end
