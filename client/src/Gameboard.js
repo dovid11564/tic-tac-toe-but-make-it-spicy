@@ -13,14 +13,15 @@ function GameBoard() {
             .then(data => setGame(data))
     }, [])
 
-    console.log(game)
+    // console.log(game)
 
 
     //making the tiles for the game right here
-
-    const tiles =  game.map(tile => {
-        return <div className='gametile'>{tile}</div>
+    //TODO: give them unique keys. 
+    const tiles =  game.map((tile, index) => {
+        return <div className='gametile' key={index}>{tile}</div>
     })
+    console.log("hi", tiles)
 
     return (
         <div className="gameBoard">
