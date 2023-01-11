@@ -15,10 +15,20 @@ function GameBoard() {
 
     console.log(game)
 
+
+    //making the tiles for the game right here
+
+    const tiles =  game.map(tile => {
+        return <div className='gametile'>{tile}</div>
+    })
+
     return (
         <div className="gameBoard">
             <div>I should probably put a navbar on here just for my peace of mind </div>
-            <div> game goes here </div>
+            <div> 
+                <p>gameboard goes here</p>
+                {tiles}
+             </div>
         </div>
     )
 }
