@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Tile from "./Tile.js"
 
 function GameBoard() {
 
@@ -13,22 +14,30 @@ function GameBoard() {
             .then(data => setGame(data))
     }, [])
 
+    
+
     // console.log(game)
 
 
     //making the tiles for the game right here
-    //TODO: give them unique keys. 
-    const tiles =  game.map((tile, index) => {
-        return <div className='gametile' key={index}>{tile}</div>
-    })
-    console.log("hi", tiles)
+
+    // const tiles =  game.map((tile, index) => {
+    //     return <div className='gametiles'><div id={`tile-number-${index}`} key={index} onClick={handleClick}>{tile}</div></div>
+    // })
+    // console.log("hi", tiles)
 
     return (
         <div className="gameBoard">
             <div>I should probably put a navbar on here just for my peace of mind </div>
             <div> 
                 <p>gameboard goes here</p>
-                {tiles}
+                {game.map((tile, index) => {
+                    return( <Tile 
+                        key={index}
+                        tile={tile}
+                        />
+                    )
+                })}
              </div>
         </div>
     )

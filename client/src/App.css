@@ -37,6 +37,10 @@
   }
 }
 
-.gametile{
+.gametiles{
   border-style: solid ;
+}
+
+#tile-number-0{
+  background-color: #61dafb;
 }
