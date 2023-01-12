@@ -32,15 +32,24 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.gametiles{
-  border-style: solid ;
+.gametiles {
+  border-style: solid;
 }
 
-#tile-number-0{
+#tile-number-0 {
   background-color: #61dafb;
+}
+
+/* the next two styles dictate weather or not the user is allowed to click on the tic tac toe tiles depending on weather or not it is their turn  */
+
+
+.unclickable {
+  pointer-events: none;
+  background-color: red;
 }

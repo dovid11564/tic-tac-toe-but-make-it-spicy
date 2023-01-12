@@ -19,12 +19,14 @@ function GameBoard() {
     // console.log(game)
 
 
-    //making the tiles for the game right here
 
-    // const tiles =  game.map((tile, index) => {
-    //     return <div className='gametiles'><div id={`tile-number-${index}`} key={index} onClick={handleClick}>{tile}</div></div>
-    // })
-    // console.log("hi", tiles)
+    //this is the state that controls which players turn it is. 
+
+    const [playersTurn, setPlayersTurn] = useState(true)
+
+
+    //this ternary controls weather or not a user can click on a div. If it is not the player's turn, they cannot click on a div
+    //(in the CSS, pointer-events: none;)
 
     return (
         <div className="gameBoard">
@@ -33,18 +35,21 @@ function GameBoard() {
                 <p>gameboard goes here</p>
                 {game.map((tile, index) => {
                     return (
-                    
+
+                        // {playersTurn ? <fieldset }
                         <Tile
                             key={index}
                             tile={tile}
                             tileid={index}
-                           
+                            
+                            setPlayersTurn={setPlayersTurn}
+                            playersTurn={playersTurn}
                         />
-                        
-                       
+
+
                     )
                 })}
-                
+
             </div>
         </div>
     )
