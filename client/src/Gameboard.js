@@ -7,6 +7,10 @@ function GameBoard() {
 
     const [game, setGame] = useState([])
 
+    //these are the states that house the users and computer's moves respectively
+    const [usersMoves, setUsersMoves] = useState([])
+    const [computersMoves, setComputersMoves] = useState([])
+
     //fetching the default game board
     useEffect(() => {
         fetch("/game")
@@ -44,6 +48,10 @@ function GameBoard() {
                             
                             setPlayersTurn={setPlayersTurn}
                             playersTurn={playersTurn}
+                            usersMoves={usersMoves}
+                            setUsersMoves={setUsersMoves}
+                            computersMoves={computersMoves} 
+                            setComputersMoves={setComputersMoves} 
                         />
 
 
