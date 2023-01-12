@@ -1,19 +1,23 @@
+import React, { useState } from "react"
+
+function Tile({ key, tile, tileid }) {
 
 
-function Tile({ index, tile }) {
+    //TODO: state that handles player making a move
+    const [empty, setEmpty] = useState(true)
 
-
-//TODO: state that handles player making a move
-function handleClick() {
-    console.log("i am click")
-}
+    //function that handles player making a move
+    function handleClick() {
+        console.log(`tile number ${tileid} was clicked`)
+        console.log(tileid)
+    }
 
 
     return (
 
         <div>
             <div className='gametiles'>
-                <div id={`tile-number-${index}`} key={index} onClick={handleClick}>{tile}
+                <div id={`tile-number-${tileid}`}  onClick={handleClick}>{tile}
                 </div>
             </div>
         </div>

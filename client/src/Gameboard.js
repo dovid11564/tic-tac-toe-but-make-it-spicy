@@ -14,7 +14,7 @@ function GameBoard() {
             .then(data => setGame(data))
     }, [])
 
-    
+
 
     // console.log(game)
 
@@ -29,16 +29,23 @@ function GameBoard() {
     return (
         <div className="gameBoard">
             <div>I should probably put a navbar on here just for my peace of mind </div>
-            <div> 
+            <div>
                 <p>gameboard goes here</p>
                 {game.map((tile, index) => {
-                    return( <Tile 
-                        key={index}
-                        tile={tile}
+                    return (
+                    
+                        <Tile
+                            key={index}
+                            tile={tile}
+                            tileid={index}
+                           
                         />
+                        
+                       
                     )
                 })}
-             </div>
+                
+            </div>
         </div>
     )
 }
