@@ -11,6 +11,26 @@ function GameBoard() {
     const [usersMoves, setUsersMoves] = useState([])
     const [computersMoves, setComputersMoves] = useState([])
 
+    //this state houses an object that contains arrays with all of the possible winning boards
+    const [boards, setBoards] = useState({})
+
+    //this useEffect sets winning boards state on dom content loaded. 
+    //I ended up doing this instead of grabbing them from a fetch because I had run into a database problem and it was simpler for me to handle the problem this way lol. 
+    useEffect(() => {
+        console.log("we are about to set winning boards!")
+        setBoards({
+            0: [0, 1, 2],
+            1: [3, 4, 5],
+            2: [6, 7, 8],
+            3: [0, 3, 6],
+            4: [1, 4, 7],
+            5: [2, 5, 8],
+            6: [0, 4, 8],
+            7: [2, 4, 6]
+        })
+        console.log(boards)
+    }, [])
+
     //fetching the default game board
     useEffect(() => {
         fetch("/game")
@@ -45,13 +65,13 @@ function GameBoard() {
                             key={index}
                             tile={tile}
                             tileid={index}
-                            
+
                             setPlayersTurn={setPlayersTurn}
                             playersTurn={playersTurn}
                             usersMoves={usersMoves}
                             setUsersMoves={setUsersMoves}
-                            computersMoves={computersMoves} 
-                            setComputersMoves={setComputersMoves} 
+                            computersMoves={computersMoves}
+                            setComputersMoves={setComputersMoves}
                         />
 
 

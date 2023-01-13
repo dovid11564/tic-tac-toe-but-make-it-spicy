@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_10_201846) do
+ActiveRecord::Schema.define(version: 2023_01_12_225117) do
 
   create_table "computer_moves", force: :cascade do |t|
     t.integer "game_stat_id", null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2023_01_10_201846) do
     t.integer "game_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "boards"
     t.index ["game_id"], name: "index_winning_boards_on_game_id"
   end
 
