@@ -9,11 +9,12 @@ function Tile(
         usersMoves,
         setUsersMoves,
         computersMoves,
-        setComputersMoves
+        setComputersMoves,
+        boards
 
     }) {
 
-   
+
 
 
     //chett said something about  having three possible states for a tile i.e. null, x, o 
@@ -22,7 +23,12 @@ function Tile(
 
 
 
-
+    const compareArrays = () => {
+        for (let eachWinningBoard of boards) {
+            // eachWinningBoard.includes
+            console.log(eachWinningBoard.includes(usersMoves))
+        }
+    }
 
     //TODO: state that handles player making a move
     const [empty, setEmpty] = useState(true)
@@ -34,7 +40,7 @@ function Tile(
 
         //the state for the turn is switched to computer turn. 
         //this was turned off for testing purposes
-        setPlayersTurn(false)
+        // setPlayersTurn(false)
         // console.log(playersTurn)
 
 
@@ -46,7 +52,7 @@ function Tile(
         // console.log(usersMoves)
 
         //the array of the user's moves is compared against a state that contains all the winning boards
-
+        compareArrays()
         //if the user has a winning board, commence win/loss/tie state
 
         //else, "COMPUTER is thinking about their next move"
