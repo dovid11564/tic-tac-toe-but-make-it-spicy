@@ -24,25 +24,20 @@ function Tile(
 
 
     const compareArrays = () => {
-
-        let index = 0
-        while (index < boards.length) {
-            console.log(boards[index])
-            usersMoves.includes(boards[index])
-            console.log(usersMoves.includes(boards[index]))
-            usersMoves.includes(boards[index])
-            index++
+        if (usersMoves.length >= 3) {
+            for (let index = 0; index < boards.length; index++) {
+                if (boards[index].includes(usersMoves[0])
+                    && boards[index].includes(usersMoves[1])
+                    && boards[index].includes(usersMoves[2])
+                ) {
+                    
+                    console.log("user wins")
+                    return []
+                }
+            } console.log("u lost")
+            return {}
+           
         }
-        // for (let eachWinningBoard of boards) {
-        //     // eachWinningBoard.includes
-
-        //     usersMoves.includes(eachWinningBoard) ? console.log("congrats! You won!") : console.log("you lost. better luck next time")
-        // console.log(usersMoves.includes(eachWinningBoard))
-
-
-        //if the return value from the above is true, console.log(congratz! You won!)
-        // else, end function
-        // }
     }
 
     //TODO: state that handles player making a move
@@ -65,7 +60,7 @@ function Tile(
 
         //the id of the tile that was clicked is added to an state that contains an array of the user's moves
         setUsersMoves([...usersMoves, tileid])
-        // console.log(usersMoves)
+        console.log(usersMoves)
 
         //the array of the user's moves is compared against a state that contains all the winning boards
         compareArrays()
