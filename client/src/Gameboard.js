@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import Tile from "./Tile.js"
 
 function GameBoard() {
@@ -28,7 +29,7 @@ function GameBoard() {
             [0, 4, 8],
             [2, 4, 6]
         ])
-        console.log(boards)
+    
     }, [])
 
     //fetching the default game board
@@ -55,13 +56,13 @@ function GameBoard() {
     return (
         <div className="gameBoard">
             <div>I should probably put a navbar on here just for my peace of mind </div>
-            <div>
-                <p>gameboard goes here</p>
+            <div className='grid-container'>
+
                 {game.map((tile, index) => {
                     return (
 
-                        // {playersTurn ? <fieldset }
                         <Tile
+                            className='grid-item'
                             key={index}
                             tile={tile}
                             tileid={index}
@@ -73,6 +74,8 @@ function GameBoard() {
                             computersMoves={computersMoves}
                             setComputersMoves={setComputersMoves}
                             boards={boards}
+                            setGame={setGame}
+                            game={game}
                         />
 
 
