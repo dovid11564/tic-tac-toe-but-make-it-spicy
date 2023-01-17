@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Switch } from 'react-router-dom'
 
 function Tile(
     {
@@ -10,7 +11,9 @@ function Tile(
         setUsersMoves,
         computersMoves,
         setComputersMoves,
-        boards
+        boards,
+        setGame,
+        game
 
     }) {
 
@@ -30,13 +33,13 @@ function Tile(
                     && boards[index].includes(usersMoves[1])
                     && boards[index].includes(usersMoves[2])
                 ) {
-                    
+
                     console.log("user wins")
-                    return []
+                    // this is where i impliment win/loss/tie
                 }
             } console.log("u lost")
             return {}
-           
+
         }
     }
 
@@ -50,13 +53,19 @@ function Tile(
 
         //the state for the turn is switched to computer turn. 
         //if this is commented out, it is for testing purposes
-        // setPlayersTurn(false)
+        setPlayersTurn(false)
         // console.log(playersTurn)
 
 
         //the state for the tile clicked is switched from empty to full
         //chett said something about  having three possible states for a tile i.e. null, x, o 
+        //I envision this as a function that checks the which turn it is via state, and then chanegs the inner html or something to x or o depending on the turn 
+        //perhaps I update the game state or something?
         setEmpty(false)
+        console.log(game)
+
+        playersTurn ? game[tileid] = "X" : game[tileid] = "O"
+
 
         //the id of the tile that was clicked is added to an state that contains an array of the user's moves
         setUsersMoves([...usersMoves, tileid])

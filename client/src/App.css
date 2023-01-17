@@ -46,10 +46,25 @@
   background-color: #61dafb;
 }
 
-/* the next two styles dictate weather or not the user is allowed to click on the tic tac toe tiles depending on weather or not it is their turn  */
-
+/* the next style dictates weather or not the user is allowed to click on the tic tac toe tiles depending on weather or not it is their turn  */
 
 .unclickable {
   pointer-events: none;
   background-color: red;
+}
+ /* the next two styles handle making the tic tac toe board look like a tic tac toe board */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+  gap: 3px;
+  cursor: pointer;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
