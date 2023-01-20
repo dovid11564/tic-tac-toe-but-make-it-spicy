@@ -43,16 +43,18 @@
 }
 
 #tile-number-0 {
-  background-color: #61dafb;
+  background-color:;
 }
 
 /* the next style dictates weather or not the user is allowed to click on the tic tac toe tiles depending on weather or not it is their turn  */
 
 .unclickable {
   pointer-events: none;
-  background-color: red;
+  background-color: orange;
+  
 }
- /* the next two styles handle making the tic tac toe board look like a tic tac toe board */
+
+/* the next two styles handle making the tic tac toe board look like a tic tac toe board */
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -61,10 +63,29 @@
   gap: 3px;
   cursor: pointer;
 }
+
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+.primary {
+  width: 140px;
+  height: 55px;
+  margin: 8px;
+  font-size: 19px;
+  border-radius: 2px;
+  border: 1px solid #101820;
+  background-color: whitesmoke;
+  transition: all 0.15s ease-in-out;
+}
+
+.primary:hover {
+  box-shadow: 3px 3px 0 0;
+  transition: all .15s ease-in-out;
+  transform: translateY(-4px);
+  cursor: pointer;
 }
