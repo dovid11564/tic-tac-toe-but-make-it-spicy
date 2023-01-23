@@ -1,91 +1,131 @@
 .App {
-  text-align: center;
+  background-color: #000000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.crt {
+  text-align: center; 
+   /* background-image: url('path/to/image.jpg');  */
+  background-size: cover;
+  font-family: "Courier New", monospace;
+  font-size: 50px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  background: linear-gradient(to top, #000000, #000000, #333333, #333333);
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  border-radius: 20px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 0 1-px rgba(255, 255, 255, 0.5);
+  filter:blur(.5px);
+  background-size: 100% 1px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@media screen{
+  .crt {
+    animation: scanlines infinite 55s linear ;
+  }
+} 
+@keyframes scanlines {
   from {
-    transform: rotate(0deg);
+    background-position: 0 0;
   }
-
   to {
-    transform: rotate(360deg);
+    background-position: 0 -10px;
   }
 }
+
+
+/* .gameboard {
+  background-color: pink;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
 
 .gametiles {
   border-style: solid;
 }
 
-#tile-number-0 {
+/* #tile-number-0 {
   background-color:;
-}
+} */
 
 /* the next style dictates weather or not the user is allowed to click on the tic tac toe tiles depending on weather or not it is their turn  */
 
 .unclickable {
   pointer-events: none;
-  background-color: orange;
-  
+  /* background-color: orange; */
 }
+
+/* .scanlines {
+  
+} */
 
 /* the next two styles handle making the tic tac toe board look like a tic tac toe board */
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
+  /* display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+
   padding: 10px;
   gap: 3px;
+
+  display: grid;
+  display: flex;
+  grid-template-areas:
+    "a a a"
+    "b b b"
+    "c c c";
+  background: linear-gradient(to top, #000000, #000000, #333333, #333333);
+  background-size: 100% 1px;
+  height: 100%;
   cursor: pointer;
+  width: 500px;
+  height: 500px; */
+
+  display: grid;
+  grid-template-columns: 215px 215px 215px;
+  grid-template-rows: 215px 215px 215px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;;
+  /* grid-gap: 10px; */
+  /* width: 500px;
+  height: 500px; */
 }
 
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+.grid-box {
+  /* display: flex; */
+  /* width: 300px;
+  height: 300px;
+  grid-row-end: span 1;
+  grid-column-end: span 1;
+  grid-area: a;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+ /*
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+  padding: 10px;
+  font-size: 30000px;
+  text-align: center; */
+  /* line-height: 4000px; */
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-.primary {
-  width: 140px;
-  height: 55px;
-  margin: 8px;
-  font-size: 19px;
-  border-radius: 2px;
-  border: 1px solid #101820;
-  background-color: whitesmoke;
-  transition: all 0.15s ease-in-out;
+#smallText {
+  font-size: 35px;
 }
 
-.primary:hover {
-  box-shadow: 3px 3px 0 0;
-  transition: all .15s ease-in-out;
-  transform: translateY(-4px);
-  cursor: pointer;
+#alsoSmallText {
+  font-size: 35px;
 }

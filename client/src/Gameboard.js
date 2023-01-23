@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import WinningScreen from './WinningScreen.js'
 import Tile from "./Tile.js"
 
 function GameBoard() {
@@ -51,30 +51,30 @@ function GameBoard() {
             .then(data => setGame(data))
     }, [])
 
-
-
     // console.log(game)
-
-
-
     //this is the state that controls which players turn it is. 
 
     const [playersTurn, setPlayersTurn] = useState(true)
 
-
     //this ternary controls weather or not a user can click on a div. If it is not the player's turn, they cannot click on a div
     //(in the CSS, pointer-events: none;)
-
+    const [isOpen, setIsOpen] = useState(false)
+    
     return (
-        <div className="gameBoard">
-            <div>I should probably put a navbar on here just for my peace of mind </div>
-            <div className='grid-container'>
+        isOpen ? 
+        <WinningScreen 
+        playersTurn={playersTurn}
+        />
+        :
+        <>
+        <br />
+        <div id='smallText'>TIC-TAC-TOE</div>
+        <br />
+             <div className='grid-container'>
 
                 {game.map((tile, index) => {
                     return (
-
                         <Tile
-                            className='grid-item'
                             key={index}
                             tile={tile}
                             tileid={index}
@@ -89,14 +89,16 @@ function GameBoard() {
                             computerBoards={computerBoards}
                             setGame={setGame}
                             game={game}
+                            setIsOpen={setIsOpen}
+                            isOpen={isOpen}
                         />
-
-
+                        
                     )
                 })}
-
             </div>
-        </div>
+          
+            <div id='alsoSmallText'>PLAYER 1: X | PLAYER 2: O</div>
+        </>
     )
 }
 

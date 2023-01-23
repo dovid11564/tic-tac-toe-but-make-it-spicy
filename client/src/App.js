@@ -6,8 +6,8 @@ import { Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-
-      <Switch>
+      <div className='crt'>
+         <Switch>
         <Route path="/yay">
           <Win />
         </Route>
@@ -15,6 +15,7 @@ function App() {
           <GameBoard />
         </Route>
       </Switch>
+      </div>
     </div>
   );
 }
