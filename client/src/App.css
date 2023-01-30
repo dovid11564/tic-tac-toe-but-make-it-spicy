@@ -15,7 +15,7 @@
   border-radius: 20px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   text-shadow: 0 0 1-px rgba(255, 255, 255, 0.5);
-  filter: blur(.8px);
+  filter: blur(1px);
   background-size: 100% 3.5px;
   height: 100vh;
   display: flex;
