@@ -26,6 +26,7 @@ Here is a description of how I envision this project to be at it's final stage:
 Here is a description of the current iteration of my project:
 
 -In the current iteration, most of everything is handled by my react and javascript frontend
+
 -A robust CSS framework gives the application a signature style
 -Two players are able to play a game together
 -If one player wins, they will be taken to a screen celebrating their win
