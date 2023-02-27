@@ -92,8 +92,8 @@
   height: 500px; */
 
   display: grid;
-  grid-template-columns: 215px 215px 215px;
-  grid-template-rows: 215px 215px 215px;
+  grid-template-columns: 115px 115px 115px;
+  grid-template-rows: 115px 115px 115px;
   margin: 0;
   padding: 0;
   cursor: pointer;
