@@ -13,8 +13,8 @@ function Tile(
         userBoards,
         computerBoards,
         game,
-        setIsOpen,
-        isOpen
+        setTileIsClickable,
+        tileIsClickable
     }
 ) {
 
@@ -60,8 +60,13 @@ function Tile(
             setUsersMoves([...usersMoves, tileid])
             // console.log("players turn", playersTurn)
             let matches = 0;
+            //the matches variable tracks how many "matches" are found in the array that contains the moves that the player has made to any winning combo
+            //for example, if a winning combo is [0, 1, 2] and the user's moves contains [1, 2], it matches will incriment up to 2
+            //if matches hits 3, then the logic will progress. Otherwise, it will repeat for other winning combos
 
             for (let i = 0; i < userBoards.length; i++) {
+                //userBoards is a state that contains all possible win combos. 
+                //we are iterating through the possible win combos, and we'll compare them against the user's moves
                 let currentWinningBoard = userBoards[i];
                 matches = 0;
                 for (let j = 0; j < currentWinningBoard.length; j++) {
@@ -70,13 +75,12 @@ function Tile(
                     if (updatedMoves.includes(currentWinningBoard[j])) {
                         matches++;
                         console.log("matching............")
-
                         console.log(updatedMoves.includes(currentWinningBoard[j]))
                         if (matches === 3) {
                             console.log("player match found")
                             setIsWinner(true);
                             setWhoWon("Player 1")
-                            setIsOpen(!isOpen)
+                            setTileIsClickable(!tileIsClickable)
                             return;
                         }
                     }
@@ -100,13 +104,11 @@ function Tile(
                     console.log("computer match found")
                     setIsWinner(true)
                     setWhoWon("Computer")
-                    setIsOpen(!isOpen)
+                    setTileIsClickable(!tileIsClickable)
                     return;
                 }
             }
         }
-
-
 
         //swap users turn AFTER the function runs so that it doesn't mess stuff up
         setPlayersTurn(!playersTurn)
@@ -122,7 +124,6 @@ function Tile(
     }
 
     return (
-
         <div className='grid-container'>
             <div
                 className={`${empty ? "" : "un"}clickable grid-box gametiles`}
